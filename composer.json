@@ -46,6 +46,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "serve" : [
+            "php -t public -S 127.0.0.1:8000"
         ]
     },
     "extra": {

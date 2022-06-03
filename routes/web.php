@@ -1,6 +1,8 @@
 <?php
 
+use App\Routes\PostRoutes;
 use Illuminate\Support\Facades\Route;
+use Uutkukorkmaz\RouteOrganizer\Facades\Organizer;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,4 +24,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+
+Organizer::register([
+    PostRoutes::class,
+]);
+
+
+require __DIR__ . '/auth.php';
